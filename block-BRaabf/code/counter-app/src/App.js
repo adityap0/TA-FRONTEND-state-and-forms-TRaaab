@@ -78,13 +78,8 @@ class App extends React.Component {
       active: true,
     });
   };
-  addActive = () => {
-    this.setState({ active: !this.state.active });
-  };
+
   render() {
-    const btn_class = this.state.active
-      ? "h-10 px-5 text-red-700 border border-red-500 rounded-lg hover:bg-red-500 hover:text-red-50 m-2"
-      : "h-10 px-5 text-green-700 border border-green-500 rounded-lg hover:bg-green-500 hover:text-blue-50 m-2";
     return (
       <div className="flex flex-col justify-evenly w-6/12 mx-auto p-10 my-20">
         <h1 className="text-center text-3xl p-2 m-4">{this.state.counter}</h1>
@@ -95,11 +90,14 @@ class App extends React.Component {
               {this.allSteps.map((step, i) => {
                 return (
                   <button
-                    className={btn_class}
+                    className={
+                      this.state.countBy === step
+                        ? "h-10 px-5 text-green-700 border border-green-500 rounded-lg hover:bg-green-500 hover:text-blue-50 m-2"
+                        : "h-10 px-5 text-red-700 border border-red-500 rounded-lg hover:bg-red-500 hover:text-red-50 m-2"
+                    }
                     key={i}
                     onClick={(e) => {
                       this.handleCountby(step);
-                      this.addActive();
                     }}
                   >
                     {step}
@@ -114,7 +112,11 @@ class App extends React.Component {
               {this.maxValue.map((value, i) => {
                 return (
                   <button
-                    className={btn_class}
+                    className={
+                      this.state.maxVal === value
+                        ? "h-10 px-5 text-green-700 border border-green-500 rounded-lg hover:bg-green-500 hover:text-blue-50 m-2"
+                        : "h-10 px-5 text-red-700 border border-red-500 rounded-lg hover:bg-red-500 hover:text-red-50 m-2"
+                    }
                     key={i}
                     onClick={(e) => {
                       this.handleMaxval(value);
