@@ -75,7 +75,6 @@ class App extends React.Component {
       counter: 0,
       countBy: 0,
       maxVal: Math.pow(10, 1000),
-      active: true,
     });
   };
 
@@ -91,7 +90,7 @@ class App extends React.Component {
                 return (
                   <button
                     className={
-                      this.state.countBy === step
+                      step === this.state.countBy
                         ? "h-10 px-5 text-green-700 border border-green-500 rounded-lg hover:bg-green-500 hover:text-blue-50 m-2"
                         : "h-10 px-5 text-red-700 border border-red-500 rounded-lg hover:bg-red-500 hover:text-red-50 m-2"
                     }
