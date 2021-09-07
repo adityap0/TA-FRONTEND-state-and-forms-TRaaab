@@ -43,7 +43,7 @@ class App extends React.Component {
       }
     } else {
       this.setState({
-        counter: this.state.counter,
+        counter: this.state.maxVal,
       });
     }
   };
@@ -65,7 +65,7 @@ class App extends React.Component {
       }
     } else {
       this.setState({
-        counter: this.state.counter,
+        counter: this.state.maxVal,
       });
     }
   };
